@@ -25,8 +25,7 @@ public class PlayCard {
 					handSlot.setVisible(false);
 					return true;
 				}
-				// random comment
-				// kk
+
 			} else if (action == 1) {
 				boolean set = CheckZoneToSetMonster.checkZoneToSetMonster(card);
 				if (set == true) {
