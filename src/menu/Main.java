@@ -67,12 +67,14 @@ public class Main {
 		TimerTask task1 = new TimerTask() {
 			public void run() {
 				if (BoardControl.opponentMonster3Occupied == false) {
-				HandControl.opponentHand4Occupied = false;
-				DuelFrame.opponentHand4.setVisible(false);
-					DuelFrame.opponentMonsterZone3.setIcon(SmallCards.minidefensecover);
-				BoardControl.opponentMonster3Occupied = true;
-				DamageControl.currentOpponentMonster3Attack = 1800;
-				DamageControl.currentOpponentMonster3Defense = 800;
+					if (BoardControl.opponentMonster3Occupied == false) {
+						HandControl.opponentHand4Occupied = false;
+						DuelFrame.opponentHand4.setVisible(false);
+						DuelFrame.opponentMonsterZone3.setIcon(SmallCards.minidefensecover);
+						BoardControl.opponentMonster3Occupied = true;
+						DamageControl.currentOpponentMonster3Attack = 1800;
+						DamageControl.currentOpponentMonster3Defense = 800;
+					}
 				}
 			}
 		};
@@ -135,8 +137,17 @@ public class Main {
 		CpuTurns.disablePlayer();
 		BoardControl.opponentSpell4Occupied = true;
 		DuelFrame.opponentSpellZone4.setIcon(SmallCards.minit);
-		HandControl.opponentHand4Occupied = true;
-		DuelFrame.opponentHand4.setVisible(true);
+		if (HandControl.opponentHand5Occupied) {
+			HandControl.opponentHand6Occupied = true;
+			DuelFrame.opponentHand6.setVisible(true);
+		} else if (HandControl.opponentHand4Occupied) {
+			HandControl.opponentHand5Occupied = true;
+			DuelFrame.opponentHand5.setVisible(true);
+		} else {
+			HandControl.opponentHand4Occupied = true;
+			DuelFrame.opponentHand4.setVisible(true);
+		}
+
 		Timer timer = new Timer();
 		TimerTask task1 = new TimerTask() {
 			public void run() {
