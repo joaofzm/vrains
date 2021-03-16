@@ -1168,7 +1168,8 @@ public class DuelFrame extends JFrame implements ActionListener {
 						if (CheckZoneToSetMonster.roundsPassedSinceMonster1WasSet > 0) {
 						playerMonsterZone1.setIcon(CheckZoneToSetMonster.currentSetMonsterZone1);
 						} else {
-							JOptionPane.showMessageDialog(null, "You can't flip summon a monster the turn it was set only control five monsters!", "Irregular move!", 0);
+							JOptionPane.showMessageDialog(null, "You can't flip summon a monster the turn it was set",
+									"Irregular move!", 0);
 						}
 					}
 				}
@@ -1207,7 +1208,8 @@ public class DuelFrame extends JFrame implements ActionListener {
 						if (CheckZoneToSetMonster.roundsPassedSinceMonster2WasSet > 0) {
 							playerMonsterZone2.setIcon(CheckZoneToSetMonster.currentSetMonsterZone2);
 						} else {
-							JOptionPane.showMessageDialog(null, "You can't flip summon a monster the turn it was set only control five monsters!", "Irregular move!", 0);
+							JOptionPane.showMessageDialog(null, "You can't flip summon a monster the turn it was set",
+									"Irregular move!", 0);
 						}
 					}
 				}
@@ -1248,7 +1250,7 @@ public class DuelFrame extends JFrame implements ActionListener {
 						playerMonsterZone3.setIcon(CheckZoneToSetMonster.currentSetMonsterZone3);
 						} else {
 							JOptionPane.showMessageDialog(null,
-									"You can't flip summon a monster the turn it was set only control five monsters!",
+									"You can't flip summon a monster the turn it was set!",
 									"Irregular move!", 0);
 						}
 					}
@@ -1289,7 +1291,7 @@ public class DuelFrame extends JFrame implements ActionListener {
 						playerMonsterZone4.setIcon(CheckZoneToSetMonster.currentSetMonsterZone4);
 						} else {
 							JOptionPane.showMessageDialog(null,
-									"You can't flip summon a monster the turn it was set only control five monsters!",
+									"You can't flip summon a monster the turn it was set!",
 									"Irregular move!", 0);
 						}
 					}
@@ -1330,7 +1332,7 @@ public class DuelFrame extends JFrame implements ActionListener {
 						playerMonsterZone5.setIcon(CheckZoneToSetMonster.currentSetMonsterZone5);
 						} else {
 							JOptionPane.showMessageDialog(null,
-									"You can't flip summon a monster the turn it was set only control five monsters!",
+									"You can't flip summon a monster the turn it was set!",
 									"Irregular move!", 0);
 						}
 					}
