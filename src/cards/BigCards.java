@@ -19,4 +19,10 @@ public class BigCards {
 	public static ImageIcon swordsofrevealinglight = new ImageIcon("swordsofrevealinglight.jpg");
 	public static ImageIcon cover = new ImageIcon("cover.jpg");
 	
+	public static ImageIcon d = new ImageIcon("d.jpg");
+	public static ImageIcon e = new ImageIcon("e.jpg");
+	public static ImageIcon a = new ImageIcon("a.jpg");
+	public static ImageIcon t = new ImageIcon("t.jpg");
+	public static ImageIcon h = new ImageIcon("h.jpg");
+
 }
