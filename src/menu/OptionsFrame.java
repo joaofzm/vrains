@@ -1,10 +1,10 @@
 package menu;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,8 +15,8 @@ public class OptionsFrame extends JFrame implements ActionListener {
 
 	JButton returnButton;
 
-	public OptionsFrame() {	
-		
+	public OptionsFrame() {
+
 		returnButton = new JButton();
 		returnButton.setBounds(655,700,150,50);
 		returnButton.addActionListener(this);
