@@ -8,6 +8,12 @@ import cards.SmallCards;
 
 public class CheckZoneToSetMonster {
 
+	public static int roundsPassedSinceMonster1WasSet;
+	public static int roundsPassedSinceMonster2WasSet;
+	public static int roundsPassedSinceMonster3WasSet;
+	public static int roundsPassedSinceMonster4WasSet;
+	public static int roundsPassedSinceMonster5WasSet;
+
 	public static Icon currentSetMonsterZone1;
 	public static Icon currentSetMonsterZone2;
 	public static Icon currentSetMonsterZone3;
@@ -26,6 +32,7 @@ public class CheckZoneToSetMonster {
 			BoardControl.playerMonster3Occupied = true;
 			currentSetMonsterZone3 = icon;
 			currentSettedMonsterZone3.setIcon(currentSetMonsterZone3);
+			roundsPassedSinceMonster3WasSet = 0;
 			if (icon == SmallCards.minisumonnedskull) {
 				DamageControl.currentPlayerMonster3Attack = 2000;
 				DamageControl.currentPlayerMonster3Defense = 100;
@@ -61,6 +68,7 @@ public class CheckZoneToSetMonster {
 			BoardControl.playerMonster4Occupied = true;
 			currentSetMonsterZone4 = icon;
 			currentSettedMonsterZone4.setIcon(currentSetMonsterZone4);
+			roundsPassedSinceMonster4WasSet = 0;
 			if (icon == SmallCards.minisumonnedskull) {
 				DamageControl.currentPlayerMonster4Attack = 2000;
 				DamageControl.currentPlayerMonster4Defense = 100;
@@ -95,6 +103,7 @@ public class CheckZoneToSetMonster {
 			BoardControl.playerMonster2Occupied = true;
 			currentSetMonsterZone2 = icon;
 			currentSettedMonsterZone2.setIcon(currentSetMonsterZone2);
+			roundsPassedSinceMonster2WasSet = 0;
 			if (icon == SmallCards.minisumonnedskull) {
 				DamageControl.currentPlayerMonster2Attack = 2000;
 				DamageControl.currentPlayerMonster2Defense = 100;
@@ -130,6 +139,7 @@ public class CheckZoneToSetMonster {
 			BoardControl.playerMonster1Occupied = true;
 			currentSetMonsterZone1 = icon;
 			currentSettedMonsterZone1.setIcon(currentSetMonsterZone1);
+			roundsPassedSinceMonster1WasSet = 0;
 			if (icon == SmallCards.minisumonnedskull) {
 				DamageControl.currentPlayerMonster1Attack = 2000;
 				DamageControl.currentPlayerMonster1Defense = 100;
@@ -164,6 +174,7 @@ public class CheckZoneToSetMonster {
 			BoardControl.playerMonster5Occupied = true;
 			currentSetMonsterZone5 = icon;
 			currentSettedMonsterZone5.setIcon(currentSetMonsterZone5);
+			roundsPassedSinceMonster5WasSet = 0;
 			if (icon == SmallCards.minisumonnedskull) {
 				DamageControl.currentPlayerMonster5Attack = 2000;
 				DamageControl.currentPlayerMonster5Defense = 100;
