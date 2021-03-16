@@ -11,17 +11,25 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import cards.BigCards;
 import cards.DrawCardOpponent;
 import cards.DrawCardPlayer;
+import cards.SmallCards;
 import menu.Main;
 import menu.SelectYourDuelistFrame;
 import menu.SelectYourOpponentFrame;
 
 public class DuelFrame extends JFrame implements ActionListener {
+	
+	static int cpuRound = 1;
+
+	static String[] flipOptions = { "Flip", "Cancel" };
+	static String[] monsterOptions = { "Attack", "Cancel" };
+	static String[] spellOptions = { "Attack", "Cancel" };
 
 	public static JPanel playerHand = new JPanel();
 	public static JButton playerHand1 = new JButton();
@@ -107,10 +115,10 @@ public class DuelFrame extends JFrame implements ActionListener {
 	public static JButton opponentHand39 = new JButton();
 	public static JButton opponentHand40 = new JButton();
 
-	static JButton nextPhaseButton = new JButton();
+	public static JButton nextPhaseButton = new JButton();
 	public static JButton returnToMenu = new JButton();
 
-	static JLabel cardInfo = new JLabel();
+	public static JLabel cardInfo = new JLabel();
 	public static JLabel playerFace = new JLabel();
 	public static JLabel opponentFace = new JLabel();
 	public static JLabel round = new JLabel();
@@ -163,284 +171,284 @@ public class DuelFrame extends JFrame implements ActionListener {
 		this.pack();
 
 		playerHand.setLayout(null);
-		playerHand.setPreferredSize(new Dimension(2000, 155));
+		playerHand.setPreferredSize(new Dimension(800, 155));
 
 		int i = 0;
 
 		playerHand1.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand1.addActionListener(this);
 		playerHand1.setFocusable(false);
 		playerHand1.setVisible(false);
 		playerHand.add(playerHand1);
 
 		playerHand2.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand2.addActionListener(this);
 		playerHand2.setFocusable(false);
 		playerHand2.setVisible(false);
 		playerHand.add(playerHand2);
 
 		playerHand3.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand3.addActionListener(this);
 		playerHand3.setFocusable(false);
 		playerHand3.setVisible(false);
 		playerHand.add(playerHand3);
 
 		playerHand4.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand4.addActionListener(this);
 		playerHand4.setFocusable(false);
 		playerHand4.setVisible(false);
 		playerHand.add(playerHand4);
 
 		playerHand5.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand5.addActionListener(this);
 		playerHand5.setFocusable(false);
 		playerHand5.setVisible(false);
 		playerHand.add(playerHand5);
 
 		playerHand6.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand6.addActionListener(this);
 		playerHand6.setVisible(false);
 		playerHand.add(playerHand6);
 
 		playerHand7.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand7.addActionListener(this);
 		playerHand7.setFocusable(false);
 		playerHand7.setVisible(false);
 		playerHand.add(playerHand7);
 
 		playerHand8.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand8.addActionListener(this);
 		playerHand8.setFocusable(false);
 		playerHand8.setVisible(false);
 		playerHand.add(playerHand8);
 
 		playerHand9.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand9.addActionListener(this);
 		playerHand9.setFocusable(false);
 		playerHand9.setVisible(false);
 		playerHand.add(playerHand9);
 
 		playerHand10.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand10.addActionListener(this);
 		playerHand10.setFocusable(false);
 		playerHand10.setVisible(false);
 		playerHand.add(playerHand10);
 
 		playerHand11.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand11.addActionListener(this);
 		playerHand11.setFocusable(false);
 		playerHand11.setVisible(false);
 		playerHand.add(playerHand11);
 
 		playerHand12.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand12.addActionListener(this);
 		playerHand12.setFocusable(false);
 		playerHand12.setVisible(false);
 		playerHand.add(playerHand12);
 
 		playerHand13.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand13.addActionListener(this);
 		playerHand13.setFocusable(false);
 		playerHand13.setVisible(false);
 		playerHand.add(playerHand13);
 
 		playerHand14.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand14.addActionListener(this);
 		playerHand14.setFocusable(false);
 		playerHand14.setVisible(false);
 		playerHand.add(playerHand14);
 
 		playerHand15.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand15.addActionListener(this);
 		playerHand15.setFocusable(false);
 		playerHand15.setVisible(false);
 		playerHand.add(playerHand15);
 
 		playerHand16.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand16.addActionListener(this);
 		playerHand16.setFocusable(false);
 		playerHand16.setVisible(false);
 		playerHand.add(playerHand16);
 
 		playerHand17.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand17.addActionListener(this);
 		playerHand17.setFocusable(false);
 		playerHand17.setVisible(false);
 		playerHand.add(playerHand17);
 
 		playerHand18.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand18.addActionListener(this);
 		playerHand18.setFocusable(false);
 		playerHand18.setVisible(false);
 		playerHand.add(playerHand18);
 
 		playerHand19.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand19.addActionListener(this);
 		playerHand19.setFocusable(false);
 		playerHand19.setVisible(false);
 		playerHand.add(playerHand19);
 
 		playerHand20.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand20.addActionListener(this);
 		playerHand20.setFocusable(false);
 		playerHand20.setVisible(false);
 		playerHand.add(playerHand20);
 
 		playerHand21.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand21.addActionListener(this);
 		playerHand21.setFocusable(false);
 		playerHand21.setVisible(false);
 		playerHand.add(playerHand21);
 
 		playerHand22.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand22.addActionListener(this);
 		playerHand22.setFocusable(false);
 		playerHand22.setVisible(false);
 		playerHand.add(playerHand22);
 
 		playerHand23.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand23.addActionListener(this);
 		playerHand23.setFocusable(false);
 		playerHand23.setVisible(false);
 		playerHand.add(playerHand23);
 
 		playerHand24.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand24.addActionListener(this);
 		playerHand24.setFocusable(false);
 		playerHand24.setVisible(false);
 		playerHand.add(playerHand24);
 
 		playerHand25.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand25.addActionListener(this);
 		playerHand25.setFocusable(false);
 		playerHand25.setVisible(false);
 		playerHand.add(playerHand25);
 
 		playerHand26.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand26.addActionListener(this);
 		playerHand26.setFocusable(false);
 		playerHand26.setVisible(false);
 		playerHand.add(playerHand26);
 
 		playerHand27.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand27.addActionListener(this);
 		playerHand27.setFocusable(false);
 		playerHand27.setVisible(false);
 		playerHand.add(playerHand27);
 
 		playerHand28.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand28.addActionListener(this);
 		playerHand28.setFocusable(false);
 		playerHand28.setVisible(false);
 		playerHand.add(playerHand28);
 
 		playerHand29.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand29.addActionListener(this);
 		playerHand29.setFocusable(false);
 		playerHand29.setVisible(false);
 		playerHand.add(playerHand29);
 
 		playerHand30.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand30.addActionListener(this);
 		playerHand30.setFocusable(false);
 		playerHand30.setVisible(false);
 		playerHand.add(playerHand30);
 
 		playerHand31.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand31.addActionListener(this);
 		playerHand31.setFocusable(false);
 		playerHand31.setVisible(false);
 		playerHand.add(playerHand31);
 
 		playerHand32.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand32.addActionListener(this);
 		playerHand32.setFocusable(false);
 		playerHand32.setVisible(false);
 		playerHand.add(playerHand32);
 
 		playerHand33.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand33.addActionListener(this);
 		playerHand33.setFocusable(false);
 		playerHand33.setVisible(false);
 		playerHand.add(playerHand33);
 
 		playerHand34.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand34.addActionListener(this);
 		playerHand34.setFocusable(false);
 		playerHand34.setVisible(false);
 		playerHand.add(playerHand34);
 
 		playerHand35.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand35.addActionListener(this);
 		playerHand35.setFocusable(false);
 		playerHand35.setVisible(false);
 		playerHand.add(playerHand35);
 
 		playerHand36.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand36.addActionListener(this);
 		playerHand36.setFocusable(false);
 		playerHand36.setVisible(false);
 		playerHand.add(playerHand36);
 
 		playerHand37.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand37.addActionListener(this);
 		playerHand37.setFocusable(false);
 		playerHand37.setVisible(false);
 		playerHand.add(playerHand37);
 
 		playerHand38.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand38.addActionListener(this);
 		playerHand38.setFocusable(false);
 		playerHand38.setVisible(false);
 		playerHand.add(playerHand38);
 
 		playerHand39.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand39.addActionListener(this);
 		playerHand39.setFocusable(false);
 		playerHand39.setVisible(false);
 		playerHand.add(playerHand39);
 
 		playerHand40.setBounds(i, 0, 110, 155);
-		i += 80;
+		i += 75;
 		playerHand40.addActionListener(this);
 		playerHand40.setFocusable(false);
 		playerHand40.setVisible(false);
@@ -746,7 +754,7 @@ public class DuelFrame extends JFrame implements ActionListener {
 
 		nextPhaseButton.setBounds(955, 450, 150, 50);
 		nextPhaseButton.addActionListener(this);
-		nextPhaseButton.setText("Battle phase");
+		nextPhaseButton.setText("END TURN");
 		nextPhaseButton.setFont(new Font("Impact", Font.BOLD, 16));
 		nextPhaseButton.setForeground(Color.white);
 		nextPhaseButton.setBackground(new Color(0x982f30));
@@ -801,7 +809,7 @@ public class DuelFrame extends JFrame implements ActionListener {
 		playerLP.setHorizontalTextPosition(JLabel.CENTER);
 		playerLP.setVerticalTextPosition(JLabel.CENTER);
 		playerLP.setForeground(Color.white);
-		playerLP.setText("             " + Main.playerLifePoints);
+		playerLP.setText("             " + DamageControl.playerLifePoints);
 		this.add(playerLP);
 
 		opponentLP.setBounds(518, 5, 145, 40);
@@ -810,7 +818,7 @@ public class DuelFrame extends JFrame implements ActionListener {
 		opponentLP.setHorizontalTextPosition(JLabel.CENTER);
 		opponentLP.setVerticalTextPosition(JLabel.CENTER);
 		opponentLP.setForeground(Color.white);
-		opponentLP.setText("             " + Main.opponentLifePoints);
+		opponentLP.setText("             " + DamageControl.opponentLifePoints);
 		this.add(opponentLP);
 
 		round.setBounds(995, 367, 60, 60);
@@ -819,156 +827,186 @@ public class DuelFrame extends JFrame implements ActionListener {
 		round.setHorizontalTextPosition(JLabel.CENTER);
 		round.setVerticalTextPosition(JLabel.CENTER);
 		round.setForeground(Color.white);
-		round.setText("     " + Main.round);
+		round.setText("     " + RoundControl.round);
 		this.add(round);
 
 		linkZone1.setBounds(823, 357, 110, 155);
+		linkZone1.setBackground(new Color(43, 100, 255, 255));
 		linkZone1.setBorder(BorderFactory.createLineBorder(Color.cyan));
 		linkZone1.addActionListener(this);
 		this.add(linkZone1);
 
 		linkZone2.setBounds(1121, 357, 110, 155);
+		linkZone2.setBackground(new Color(43, 100, 255, 255));
 		linkZone2.setBorder(BorderFactory.createLineBorder(Color.cyan));
 		linkZone2.addActionListener(this);
 		this.add(linkZone2);
 
 		playerField.setBounds(538, 482, 110, 155);
+		playerField.setBackground(new Color(58, 201, 51, 255));
 		playerField.setBorder(BorderFactory.createLineBorder(Color.green));
 		playerField.addActionListener(this);
 		this.add(playerField);
 
 		playerDeck.setBounds(1408, 657, 110, 155);
+		playerDeck.setIcon(SmallCards.minicover);
 		playerDeck.setBorder(BorderFactory.createLineBorder(Color.orange));
 		playerDeck.addActionListener(this);
 		this.add(playerDeck);
 
 		playerExtraDeck.setBounds(538, 657, 110, 155);
+		playerExtraDeck.setBackground(new Color(98, 56, 152, 255));
 		playerExtraDeck.setBorder(BorderFactory.createLineBorder(Color.pink));
 		playerExtraDeck.addActionListener(this);
 		this.add(playerExtraDeck);
 
 		playerGraveyard.setBounds(1408, 482, 110, 155);
+		playerGraveyard.setBackground(new Color(86, 0, 0, 255));
 		playerGraveyard.setBorder(BorderFactory.createLineBorder(Color.red));
 		playerGraveyard.addActionListener(this);
 		this.add(playerGraveyard);
 
 		playerMonsterZone1.setBounds(676, 532, 110, 155);
+		playerMonsterZone1.setBackground(new Color(118, 87, 0, 255));
 		playerMonsterZone1.setBorder(BorderFactory.createLineBorder(Color.white));
 		playerMonsterZone1.addActionListener(this);
 		this.add(playerMonsterZone1);
 
 		playerMonsterZone2.setBounds(823, 532, 110, 155);
+		playerMonsterZone2.setBackground(new Color(118, 87, 0, 255));
 		playerMonsterZone2.setBorder(BorderFactory.createLineBorder(Color.white));
 		playerMonsterZone2.addActionListener(this);
 		this.add(playerMonsterZone2);
 
 		playerMonsterZone3.setBounds(972, 532, 110, 155);
+		playerMonsterZone3.setBackground(new Color(118, 87, 0, 255));
 		playerMonsterZone3.setBorder(BorderFactory.createLineBorder(Color.white));
 		playerMonsterZone3.addActionListener(this);
 		this.add(playerMonsterZone3);
 
 		playerMonsterZone4.setBounds(1121, 532, 110, 155);
+		playerMonsterZone4.setBackground(new Color(118, 87, 0, 255));
 		playerMonsterZone4.setBorder(BorderFactory.createLineBorder(Color.white));
 		playerMonsterZone4.addActionListener(this);
 		this.add(playerMonsterZone4);
 
 		playerMonsterZone5.setBounds(1270, 532, 110, 155);
+		playerMonsterZone5.setBackground(new Color(118, 87, 0, 255));
 		playerMonsterZone5.setBorder(BorderFactory.createLineBorder(Color.white));
 		playerMonsterZone5.addActionListener(this);
 		this.add(playerMonsterZone5);
 
 		playerSpellZone1.setBounds(676, 707, 110, 155);
+		playerSpellZone1.setBackground(new Color(153, 255, 102, 255));
 		playerSpellZone1.setBorder(BorderFactory.createLineBorder(Color.white));
 		playerSpellZone1.addActionListener(this);
 		this.add(playerSpellZone1);
 
 		playerSpellZone2.setBounds(823, 707, 110, 155);
+		playerSpellZone2.setBackground(new Color(153, 255, 102, 255));
 		playerSpellZone2.setBorder(BorderFactory.createLineBorder(Color.white));
 		playerSpellZone2.addActionListener(this);
 		this.add(playerSpellZone2);
 
 		playerSpellZone3.setBounds(972, 707, 110, 155);
+		playerSpellZone3.setBackground(new Color(153, 255, 102, 255));
 		playerSpellZone3.setBorder(BorderFactory.createLineBorder(Color.white));
 		playerSpellZone3.addActionListener(this);
 		this.add(playerSpellZone3);
 
 		playerSpellZone4.setBounds(1121, 707, 110, 155);
+		playerSpellZone4.setBackground(new Color(153, 255, 102, 255));
+		playerSpellZone4.setBackground(new Color(153, 255, 102, 255));
 		playerSpellZone4.setBorder(BorderFactory.createLineBorder(Color.white));
 		playerSpellZone4.addActionListener(this);
 		this.add(playerSpellZone4);
 
 		playerSpellZone5.setBounds(1270, 707, 110, 155);
+		playerSpellZone5.setBackground(new Color(153, 255, 102, 255));
 		playerSpellZone5.setBorder(BorderFactory.createLineBorder(Color.white));
 		linkZone2.addActionListener(this);
 		this.add(playerSpellZone5);
 
 		opponentField.setBounds(1408, 231, 110, 155);
+		opponentField.setBackground(new Color(58, 201, 51, 255));
 		opponentField.setBorder(BorderFactory.createLineBorder(Color.green));
 		opponentField.addActionListener(this);
 		this.add(opponentField);
 
 		opponentDeck.setBounds(538, 55, 110, 155);
-		;
+		opponentDeck.setIcon(SmallCards.minicover);
 		opponentDeck.setBorder(BorderFactory.createLineBorder(Color.orange));
 		opponentDeck.addActionListener(this);
 		this.add(opponentDeck);
 
 		opponentExtraDeck.setBounds(1408, 55, 110, 155);
+		opponentExtraDeck.setBackground(new Color(98, 56, 152, 255));
 		opponentExtraDeck.setBorder(BorderFactory.createLineBorder(Color.pink));
 		opponentExtraDeck.addActionListener(this);
 		this.add(opponentExtraDeck);
 
 		opponentGraveyard.setBounds(538, 231, 110, 155);
+		opponentGraveyard.setBackground(new Color(86, 0, 0, 255));
 		opponentGraveyard.setBorder(BorderFactory.createLineBorder(Color.red));
 		opponentGraveyard.addActionListener(this);
 		this.add(opponentGraveyard);
 
 		opponentMonsterZone1.setBounds(676, 181, 110, 155);
+		opponentMonsterZone1.setBackground(new Color(118, 87, 0, 255));
 		opponentMonsterZone1.setBorder(BorderFactory.createLineBorder(Color.white));
 		opponentMonsterZone1.addActionListener(this);
 		this.add(opponentMonsterZone1);
 
 		opponentMonsterZone2.setBounds(823, 181, 110, 155);
+		opponentMonsterZone2.setBackground(new Color(118, 87, 0, 255));
 		opponentMonsterZone2.setBorder(BorderFactory.createLineBorder(Color.white));
 		opponentMonsterZone2.addActionListener(this);
 		this.add(opponentMonsterZone2);
 
 		opponentMonsterZone3.setBounds(972, 181, 110, 155);
+		opponentMonsterZone3.setBackground(new Color(118, 87, 0, 255));
 		opponentMonsterZone3.setBorder(BorderFactory.createLineBorder(Color.white));
 		linkZone2.addActionListener(this);
 		this.add(opponentMonsterZone3);
 
 		opponentMonsterZone4.setBounds(1121, 181, 110, 155);
+		opponentMonsterZone4.setBackground(new Color(118, 87, 0, 255));
 		opponentMonsterZone4.setBorder(BorderFactory.createLineBorder(Color.white));
 		opponentMonsterZone4.addActionListener(this);
 		this.add(opponentMonsterZone4);
 
 		opponentMonsterZone5.setBounds(1270, 181, 110, 155);
+		opponentMonsterZone5.setBackground(new Color(118, 87, 0, 255));
 		opponentMonsterZone5.setBorder(BorderFactory.createLineBorder(Color.white));
 		opponentMonsterZone5.addActionListener(this);
 		this.add(opponentMonsterZone5);
 
 		opponentSpellZone1.setBounds(676, 5, 110, 155);
+		opponentSpellZone1.setBackground(new Color(153, 255, 102, 255));
 		opponentSpellZone1.setBorder(BorderFactory.createLineBorder(Color.white));
 		opponentSpellZone1.addActionListener(this);
 		this.add(opponentSpellZone1);
 
 		opponentSpellZone2.setBounds(823, 5, 110, 155);
+		opponentSpellZone2.setBackground(new Color(153, 255, 102, 255));
 		opponentSpellZone2.setBorder(BorderFactory.createLineBorder(Color.white));
 		opponentSpellZone2.addActionListener(this);
 		this.add(opponentSpellZone2);
 
 		opponentSpellZone3.setBounds(972, 5, 110, 155);
+		opponentSpellZone3.setBackground(new Color(153, 255, 102, 255));
 		opponentSpellZone3.setBorder(BorderFactory.createLineBorder(Color.white));
 		opponentSpellZone3.addActionListener(this);
 		this.add(opponentSpellZone3);
 
 		opponentSpellZone4.setBounds(1121, 5, 110, 155);
+		opponentSpellZone4.setBackground(new Color(153, 255, 102, 255));
 		opponentSpellZone4.setBorder(BorderFactory.createLineBorder(Color.white));
 		opponentSpellZone4.addActionListener(this);
 		this.add(opponentSpellZone4);
 
 		opponentSpellZone5.setBounds(1270, 5, 110, 155);
+		opponentSpellZone5.setBackground(new Color(153, 255, 102, 255));
 		opponentSpellZone5.setBorder(BorderFactory.createLineBorder(Color.white));
 		opponentSpellZone5.addActionListener(this);
 		this.add(opponentSpellZone5);
@@ -984,16 +1022,30 @@ public class DuelFrame extends JFrame implements ActionListener {
 		DrawCardOpponent.drawCardOpponent();
 		DrawCardOpponent.drawCardOpponent();
 		DrawCardOpponent.drawCardOpponent();
+
+		Main.cpuTurn1();
+		cpuRound++;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == nextPhaseButton) {
-			cardInfo.setIcon(BigCards.raigeki);
-			nextPhaseButton.setText("Main phase 2");
-			Main.damagePlayer(2000);
-			DrawCardPlayer.drawCardPlayer();
+			if (cpuRound == 2) {
+				Main.cpuTurn2();
+				cpuRound++;
+			} else if (cpuRound == 3) {
+				Main.cpuTurn3();
+				cpuRound++;
+			} else if (cpuRound == 4) {
+				Main.cpuTurn4();
+				cpuRound++;
+			} else if (cpuRound == 5) {
+				Main.cpuTurn5();
+				cpuRound++;
+			}
+
 		}
+
 
 		if (e.getSource() == DuelFrame.playerHand1) {
 			boolean played = PlayCard.playCard(playerHand1);
@@ -1036,6 +1088,337 @@ public class DuelFrame extends JFrame implements ActionListener {
 				HandControl.playerHand6Occupied = false;
 			}
 		}
+
+		if (e.getSource() == playerHand7) {
+			boolean played = PlayCard.playCard(playerHand7);
+			if (played == true) {
+				HandControl.playerHand7Occupied = false;
+			}
+		}
+
+		if (e.getSource() == playerHand8) {
+			boolean played = PlayCard.playCard(playerHand8);
+			if (played == true) {
+				HandControl.playerHand8Occupied = false;
+			}
+		}
+
+		if (e.getSource() == playerHand9) {
+			boolean played = PlayCard.playCard(playerHand9);
+			if (played == true) {
+				HandControl.playerHand9Occupied = false;
+			}
+		}
+
+		if (e.getSource() == playerHand10) {
+			boolean played = PlayCard.playCard(playerHand10);
+			if (played == true) {
+				HandControl.playerHand10Occupied = false;
+			}
+		}
+
+		if (e.getSource() == playerHand11) {
+			boolean played = PlayCard.playCard(playerHand11);
+			if (played == true) {
+				HandControl.playerHand11Occupied = false;
+			}
+		}
+
+		if (e.getSource() == playerHand12) {
+			boolean played = PlayCard.playCard(playerHand12);
+			if (played == true) {
+				HandControl.playerHand12Occupied = false;
+			}
+		}
+
+		if (e.getSource() == playerMonsterZone1) {
+			if (BoardControl.playerMonster1Occupied == true) {
+				if (playerMonsterZone1.getIcon() == SmallCards.minidefensecover) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(CheckZoneToSetMonster.currentSettedMonsterZone1);
+				} else {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(playerMonsterZone1);
+				}
+
+				if (playerMonsterZone1.getIcon() != SmallCards.minidefensecover) {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, monsterOptions, 0);
+					if (action == 0 && DamageControl.playerMonster1Attacked == false) {
+						if (BoardControl.opponentMonster3Occupied == true) {
+							opponentMonsterZone3.setIcon(null);
+							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							BoardControl.opponentMonster3Occupied = false;
+							DamageControl.playerMonster1Attacked = true;
+						} else {
+							DamageControl.damageOpponent(DamageControl.currentPlayerMonster1Attack);
+							DamageControl.playerMonster1Attacked = true;
+						}
+					} else if (action == 1) {
+
+							} else {
+						JOptionPane.showMessageDialog(null, "Each monster can only attack once per turn!");
+							}
+				} else {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
+					if (action == 0) {
+						playerMonsterZone1.setIcon(CheckZoneToSetMonster.currentSetMonsterZone1);
+					}
+				}
+
+			}
+		}
+		
+		if (e.getSource() == playerMonsterZone2) {
+			if (BoardControl.playerMonster2Occupied == true) {
+				if (playerMonsterZone2.getIcon() == SmallCards.minidefensecover) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(CheckZoneToSetMonster.currentSettedMonsterZone2);
+				} else {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(playerMonsterZone2);
+				}
+
+				if (playerMonsterZone2.getIcon() != SmallCards.minidefensecover) {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, monsterOptions, 0);
+					if (action == 0 && DamageControl.playerMonster2Attacked == false) {
+						if (BoardControl.opponentMonster3Occupied == true) {
+							opponentMonsterZone3.setIcon(null);
+							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							BoardControl.opponentMonster3Occupied = false;
+							DamageControl.playerMonster2Attacked = true;
+						} else {
+							DamageControl.damageOpponent(DamageControl.currentPlayerMonster2Attack);
+							DamageControl.playerMonster2Attacked = true;
+						}
+					} else if (action == 1) {
+
+							} else {
+						JOptionPane.showMessageDialog(null, "Each monster can only attack once per turn!");
+							}
+				} else {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
+					if (action == 0) {
+						playerMonsterZone2.setIcon(CheckZoneToSetMonster.currentSetMonsterZone2);
+					}
+				}
+
+			}
+		}
+		
+
+		if (e.getSource() == playerMonsterZone3) {
+			if (BoardControl.playerMonster3Occupied == true) {
+				if (playerMonsterZone3.getIcon() == SmallCards.minidefensecover) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(CheckZoneToSetMonster.currentSettedMonsterZone3);
+				} else {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(playerMonsterZone3);
+				}
+
+				if (playerMonsterZone3.getIcon() != SmallCards.minidefensecover) {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, monsterOptions, 0);
+					if (action == 0 && DamageControl.playerMonster3Attacked == false) {
+						if (BoardControl.opponentMonster3Occupied == true) {
+							opponentMonsterZone3.setIcon(null);
+							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							BoardControl.opponentMonster3Occupied = false;
+							DamageControl.playerMonster3Attacked = true;
+						} else {
+							DamageControl.damageOpponent(DamageControl.currentPlayerMonster3Attack);
+							DamageControl.playerMonster3Attacked = true;
+						}
+					} else if (action == 1) {
+
+							} else {
+						JOptionPane.showMessageDialog(null, "Each monster can only attack once per turn!");
+							}
+				} else {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
+					if (action == 0) {
+						playerMonsterZone3.setIcon(CheckZoneToSetMonster.currentSetMonsterZone3);
+					}
+				}
+
+			}
+		}
+
+		if (e.getSource() == playerMonsterZone4) {
+			if (BoardControl.playerMonster4Occupied == true) {
+				if (playerMonsterZone4.getIcon() == SmallCards.minidefensecover) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(CheckZoneToSetMonster.currentSettedMonsterZone4);
+				} else {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(playerMonsterZone4);
+				}
+
+				if (playerMonsterZone4.getIcon() != SmallCards.minidefensecover) {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, monsterOptions, 0);
+					if (action == 0 && DamageControl.playerMonster4Attacked == false) {
+						if (BoardControl.opponentMonster3Occupied == true) {
+							opponentMonsterZone3.setIcon(null);
+							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							BoardControl.opponentMonster3Occupied = false;
+							DamageControl.playerMonster4Attacked = true;
+						} else {
+							DamageControl.damageOpponent(DamageControl.currentPlayerMonster4Attack);
+							DamageControl.playerMonster4Attacked = true;
+						}
+					} else if (action == 1) {
+
+							} else {
+						JOptionPane.showMessageDialog(null, "Each monster can only attack once per turn!");
+							}
+				} else {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
+					if (action == 0) {
+						playerMonsterZone4.setIcon(CheckZoneToSetMonster.currentSetMonsterZone4);
+					}
+				}
+
+			}
+		}
+		
+		if (e.getSource() == playerMonsterZone5) {
+			if (BoardControl.playerMonster5Occupied == true) {
+				if (playerMonsterZone5.getIcon() == SmallCards.minidefensecover) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(CheckZoneToSetMonster.currentSettedMonsterZone5);
+				} else {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(playerMonsterZone5);
+				}
+
+				if (playerMonsterZone5.getIcon() != SmallCards.minidefensecover) {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, monsterOptions, 0);
+					if (action == 0 && DamageControl.playerMonster5Attacked == false) {
+						if (BoardControl.opponentMonster3Occupied == true) {
+							opponentMonsterZone3.setIcon(null);
+							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							BoardControl.opponentMonster3Occupied = false;
+							DamageControl.playerMonster5Attacked = true;
+						} else {
+							DamageControl.damageOpponent(DamageControl.currentPlayerMonster5Attack);
+							DamageControl.playerMonster5Attacked = true;
+						}
+					} else if (action == 1) {
+
+							} else {
+						JOptionPane.showMessageDialog(null, "Each monster can only attack once per turn!");
+							}
+				} else {
+					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
+					if (action == 0) {
+						playerMonsterZone5.setIcon(CheckZoneToSetMonster.currentSetMonsterZone5);
+					}
+				}
+
+			}
+		}
+
+		
+		
+		if (e.getSource() == playerGraveyard) {
+			if (DuelFrame.playerGraveyard.getIcon() != null) {
+				CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(playerGraveyard);
+			}
+		}
+
+			if (e.getSource() == opponentGraveyard) {
+				if (DuelFrame.opponentGraveyard.getIcon() != null) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(opponentGraveyard);
+				}
+			}
+
+
+			if (e.getSource() == opponentSpellZone1) {
+				if (DuelFrame.opponentSpellZone1.getIcon() != null) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(opponentSpellZone1);
+				}
+			}
+
+			if (e.getSource() == opponentSpellZone2) {
+				if (DuelFrame.opponentSpellZone2.getIcon() != null) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(opponentSpellZone2);
+				}
+			}
+
+			if (e.getSource() == opponentSpellZone3) {
+				if (DuelFrame.opponentSpellZone3.getIcon() != null) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(opponentSpellZone3);
+				}
+			}
+
+			if (e.getSource() == opponentSpellZone4) {
+				if (DuelFrame.opponentSpellZone4.getIcon() != null) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(opponentSpellZone4);
+				}
+			}
+
+			if (e.getSource() == opponentSpellZone5) {
+				if (DuelFrame.opponentSpellZone5.getIcon() != null) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(opponentSpellZone5);
+				}
+			}
+
+
+			
+			
+			
+			
+
+
+			if (e.getSource() == playerSpellZone3) {
+				if (DuelFrame.playerSpellZone3.getIcon() != null) {
+					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone3);
+					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone3);
+					if (played == true) {
+						playerSpellZone3.setIcon(null);
+						BoardControl.playerSpell3Occupied = false;
+					}
+				}
+			}
+
+			if (e.getSource() == playerSpellZone1) {
+				if (DuelFrame.playerSpellZone1.getIcon() != null) {
+					CheckCardInHandForBigCardInfo
+							.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone1);
+					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone1);
+					if (played == true) {
+						playerSpellZone1.setIcon(null);
+						BoardControl.playerSpell1Occupied = false;
+					}
+				}
+			}
+
+			if (e.getSource() == playerSpellZone2) {
+				if (DuelFrame.playerSpellZone2.getIcon() != null) {
+					CheckCardInHandForBigCardInfo
+							.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone2);
+					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone2);
+					if (played == true) {
+						playerSpellZone2.setIcon(null);
+						BoardControl.playerSpell2Occupied = false;
+					}
+				}
+			}
+
+			if (e.getSource() == playerSpellZone4) {
+				if (DuelFrame.playerSpellZone4.getIcon() != null) {
+					CheckCardInHandForBigCardInfo
+							.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone4);
+					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone4);
+					if (played == true) {
+						playerSpellZone4.setIcon(null);
+						BoardControl.playerSpell4Occupied = false;
+					}
+				}
+			}
+
+			if (e.getSource() == playerSpellZone5) {
+				if (DuelFrame.playerSpellZone5.getIcon() != null) {
+					CheckCardInHandForBigCardInfo
+							.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone5);
+					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone5);
+					if (played == true) {
+						playerSpellZone5.setIcon(null);
+						BoardControl.playerSpell5Occupied = false;
+					}
+				}
+			}
+
+
 
 	}
 }
