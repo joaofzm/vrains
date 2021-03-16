@@ -5,34 +5,28 @@ import javax.swing.JOptionPane;
 
 public class CheckZoneToActivate {
 
-	public static boolean checkZoneToActivate (Icon icon) {
-		if (BoardControl.playerSpell3Occupied==false) {
-			DuelFrame.playerSpellZone3.setIcon(icon);
-			BoardControl.playerSpell3Occupied=true;
+	public static boolean checkZoneToActivate(Icon icon) {
+		if (BoardControl.playerSpell3Occupied == false) {
+			DuelFrame.playerGraveyard.setIcon(icon);
 			return true;
-		} else if (BoardControl.playerSpell4Occupied==false) {
-			DuelFrame.playerSpellZone4.setIcon(icon);
-			BoardControl.playerSpell4Occupied=true;
+		} else if (BoardControl.playerSpell4Occupied == false) {
+			DuelFrame.playerGraveyard.setIcon(icon);
 			return true;
-		} else if (BoardControl.playerSpell2Occupied==false) {
-			DuelFrame.playerSpellZone2.setIcon(icon);
-			BoardControl.playerSpell2Occupied=true;
+		} else if (BoardControl.playerSpell2Occupied == false) {
+			DuelFrame.playerGraveyard.setIcon(icon);
 			return true;
-		} else if (BoardControl.playerSpell1Occupied==false) {
-			DuelFrame.playerSpellZone1.setIcon(icon);
-			BoardControl.playerSpell1Occupied=true;
+		} else if (BoardControl.playerSpell1Occupied == false) {
+			DuelFrame.playerGraveyard.setIcon(icon);
 			return true;
-		} else if (BoardControl.playerSpell5Occupied==false) {
-			DuelFrame.playerSpellZone5.setIcon(icon);
-			BoardControl.playerSpell5Occupied=true;
+		} else if (BoardControl.playerSpell5Occupied == false) {
+			DuelFrame.playerGraveyard.setIcon(icon);
 			return true;
 		} else {
-			JOptionPane.showMessageDialog(null, "You can only control five monsters!", "You can only control five monsters!", 0);
+			JOptionPane.showMessageDialog(null, "You can only control five spell/traps!",
+					"You can only control five spell;traps!", 0);
 			return false;
 		}
-		
+
 	}
 
-
 }
-
