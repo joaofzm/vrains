@@ -165,7 +165,6 @@ public class Main {
 
 	public static void cpuTurn5() {
 		DuelFrame.nextPhaseButton.setEnabled(false);
-		RoundControl.passRound();
 		CpuTurns.disablePlayer();
 		BoardControl.opponentSpell5Occupied = true;
 		DuelFrame.opponentSpellZone5.setIcon(SmallCards.minih);
@@ -180,8 +179,7 @@ public class Main {
 
 		CardList.cardList();
 
-		new RockPaperScissorsFrame();
-		// new StartFrame();
+		new StartFrame();
 
 	}
 
