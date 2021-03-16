@@ -18,5 +18,12 @@ public class SmallCards {
 	public static ImageIcon minisumonnedskull = new ImageIcon("minisumonnedskull.jpg");
 	public static ImageIcon miniswordsofrevealinglight = new ImageIcon("miniswordsofrevealinglight.jpg");
 	public static ImageIcon minicover = new ImageIcon("minicover.jpg");
+	public static ImageIcon minidefensecover = new ImageIcon("minidefensecover.jpg");
+
+	public static ImageIcon minid = new ImageIcon("minid.jpg");
+	public static ImageIcon minie = new ImageIcon("minie.jpg");
+	public static ImageIcon minia = new ImageIcon("minia.jpg");
+	public static ImageIcon minit = new ImageIcon("minit.jpg");
+	public static ImageIcon minih = new ImageIcon("minih.jpg");
 
 }
