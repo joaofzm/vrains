@@ -1,12 +1,10 @@
 package menu;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,7 +22,6 @@ public class SelectYourDuelistFrame extends JFrame implements ActionListener {
 	JButton reiji;
 	JButton playMaker;
 
-	
 	public static ImageIcon soulBurnerImage = new ImageIcon("soulburner.jpg");
 	public static ImageIcon revolverImage = new ImageIcon("revolver.jpg");
 	public static ImageIcon reijiImage = new ImageIcon("reiji.jpg");
