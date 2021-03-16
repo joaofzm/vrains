@@ -504,6 +504,7 @@ public class DuelFrame extends JFrame implements ActionListener {
 		opponentHand6.setBounds(i, 0, 110, 155);
 		i += 80;
 		opponentHand6.addActionListener(this);
+		opponentHand6.setIcon(SmallCards.minicover);
 		opponentHand6.setVisible(false);
 		opponentHand.add(opponentHand6);
 
