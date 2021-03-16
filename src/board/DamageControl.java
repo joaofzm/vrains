@@ -73,8 +73,8 @@ public class DamageControl {
 			DuelFrame.playerMonsterZone4.setEnabled(false);
 			DuelFrame.playerMonsterZone5.setEnabled(false);
 			DuelFrame.nextPhaseButton.setEnabled(false);
-			JOptionPane.showOptionDialog(null, "Your opponent LP reached 0!", "YOU WON!",
-					JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, Options, 0);
+			JOptionPane.showMessageDialog(null, "Your opponent LP reached 0!", "YOU WIN!", 1);
+
 		}
 	}
 
