@@ -1,14 +1,10 @@
 package board;
 
-import java.awt.event.ActionEvent;
-
 import javax.swing.Icon;
 import javax.swing.JButton;
 
 import cards.BigCards;
-import cards.DrawCardPlayer;
 import cards.SmallCards;
-import menu.Main;
 
 public class CheckCardInHandForBigCardInfo {
 
@@ -40,7 +36,19 @@ public class CheckCardInHandForBigCardInfo {
 			card = BigCards.sumonnedskull;	
 		} else if(card==SmallCards.miniswordsofrevealinglight){
 			card = BigCards.swordsofrevealinglight;	
-		}																																									
+		} else if (card == SmallCards.minid) {
+			card = BigCards.d;
+		} else if (card == SmallCards.minie) {
+			card = BigCards.e;
+		} else if (card == SmallCards.minia) {
+			card = BigCards.a;
+		} else if (card == SmallCards.minit) {
+			card = BigCards.t;
+		} else if (card == SmallCards.minih) {
+			card = BigCards.h;
+		} else if (card == SmallCards.minicover) {
+			card = BigCards.cover;
+		}
 
 		DuelFrame.cardInfo.setIcon(card);
 	}
