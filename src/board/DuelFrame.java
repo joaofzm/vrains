@@ -1031,6 +1031,11 @@ public class DuelFrame extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == nextPhaseButton) {
+			CheckZoneToSetMonster.roundsPassedSinceMonster1WasSet++;
+			CheckZoneToSetMonster.roundsPassedSinceMonster2WasSet++;
+			CheckZoneToSetMonster.roundsPassedSinceMonster3WasSet++;
+			CheckZoneToSetMonster.roundsPassedSinceMonster4WasSet++;
+			CheckZoneToSetMonster.roundsPassedSinceMonster5WasSet++;
 			if (cpuRound == 2) {
 				Main.cpuTurn2();
 				cpuRound++;
@@ -1160,7 +1165,11 @@ public class DuelFrame extends JFrame implements ActionListener {
 				} else {
 					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
 					if (action == 0) {
+						if (CheckZoneToSetMonster.roundsPassedSinceMonster1WasSet > 0) {
 						playerMonsterZone1.setIcon(CheckZoneToSetMonster.currentSetMonsterZone1);
+						} else {
+							JOptionPane.showMessageDialog(null, "You can't flip summon a monster the turn it was set only control five monsters!", "Irregular move!", 0);
+						}
 					}
 				}
 
@@ -1195,7 +1204,11 @@ public class DuelFrame extends JFrame implements ActionListener {
 				} else {
 					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
 					if (action == 0) {
-						playerMonsterZone2.setIcon(CheckZoneToSetMonster.currentSetMonsterZone2);
+						if (CheckZoneToSetMonster.roundsPassedSinceMonster2WasSet > 0) {
+							playerMonsterZone2.setIcon(CheckZoneToSetMonster.currentSetMonsterZone2);
+						} else {
+							JOptionPane.showMessageDialog(null, "You can't flip summon a monster the turn it was set only control five monsters!", "Irregular move!", 0);
+						}
 					}
 				}
 
@@ -1231,7 +1244,13 @@ public class DuelFrame extends JFrame implements ActionListener {
 				} else {
 					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
 					if (action == 0) {
+						if (CheckZoneToSetMonster.roundsPassedSinceMonster3WasSet > 0) {
 						playerMonsterZone3.setIcon(CheckZoneToSetMonster.currentSetMonsterZone3);
+						} else {
+							JOptionPane.showMessageDialog(null,
+									"You can't flip summon a monster the turn it was set only control five monsters!",
+									"Irregular move!", 0);
+						}
 					}
 				}
 
@@ -1266,7 +1285,13 @@ public class DuelFrame extends JFrame implements ActionListener {
 				} else {
 					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
 					if (action == 0) {
+						if (CheckZoneToSetMonster.roundsPassedSinceMonster4WasSet > 0) {
 						playerMonsterZone4.setIcon(CheckZoneToSetMonster.currentSetMonsterZone4);
+						} else {
+							JOptionPane.showMessageDialog(null,
+									"You can't flip summon a monster the turn it was set only control five monsters!",
+									"Irregular move!", 0);
+						}
 					}
 				}
 
@@ -1301,7 +1326,13 @@ public class DuelFrame extends JFrame implements ActionListener {
 				} else {
 					int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, flipOptions, 0);
 					if (action == 0) {
+						if (CheckZoneToSetMonster.roundsPassedSinceMonster5WasSet > 0) {
 						playerMonsterZone5.setIcon(CheckZoneToSetMonster.currentSetMonsterZone5);
+						} else {
+							JOptionPane.showMessageDialog(null,
+									"You can't flip summon a monster the turn it was set only control five monsters!",
+									"Irregular move!", 0);
+						}
 					}
 				}
 
