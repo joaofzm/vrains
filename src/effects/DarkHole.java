@@ -1,32 +1,13 @@
 package effects;
 
-import javax.swing.Icon;
-
 import board.BoardControl;
 import board.DamageControl;
 import board.DuelFrame;
-import cards.BigCards;
 import cards.SmallCards;
 
 public class DarkHole {
 
 	public static boolean darkHole() {
-		if (BoardControl.playerMonster1Occupied == true && DuelFrame.playerMonsterZone1.getIcon() != SmallCards.minicover ) {
-			Icon icon = DuelFrame.playerMonsterZone1.getIcon();
-			DuelFrame.playerGraveyard.setIcon(icon);
-		} else if (BoardControl.playerMonster2Occupied == true && DuelFrame.playerMonsterZone2.getIcon() != SmallCards.minicover ) {
-			Icon icon = DuelFrame.playerMonsterZone2.getIcon();
-			DuelFrame.playerGraveyard.setIcon(icon);
-		} else if (BoardControl.playerMonster3Occupied == true && DuelFrame.playerMonsterZone3.getIcon() != SmallCards.minicover ) {
-			Icon icon = DuelFrame.playerMonsterZone3.getIcon();
-			DuelFrame.playerGraveyard.setIcon(icon);
-		} else if (BoardControl.playerMonster4Occupied == true && DuelFrame.playerMonsterZone4.getIcon() != SmallCards.minicover ) {
-			Icon icon = DuelFrame.playerMonsterZone4.getIcon();
-			DuelFrame.playerGraveyard.setIcon(icon);
-		} else if (BoardControl.playerMonster5Occupied == true && DuelFrame.playerMonsterZone5.getIcon() != SmallCards.minicover ) {
-			Icon icon = DuelFrame.playerMonsterZone5.getIcon();
-			DuelFrame.playerGraveyard.setIcon(BigCards.sumonnedskull);
-		}
 
 		if (BoardControl.opponentMonster3Occupied == true) {
 			DuelFrame.opponentGraveyard.setIcon(SmallCards.minidarkelf);
