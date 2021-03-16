@@ -10,30 +10,39 @@ public class PlayCard {
 	static String[] spellOptions = { "Activate", "Set", "Cancel" };
 	static String[] trapOptions = { "Set", "Cancel" };
 
+	public static boolean normalSummoned = false;
+
 	public static boolean playCard(JButton handSlot) {
 
 		CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo((JButton) handSlot);
 		Icon card = handSlot.getIcon();
 		int cardType = CheckCardType.checkCardType(card);
 		if (cardType == 0) {
-			int action = JOptionPane.showOptionDialog(null, null, "Select your action",
-					JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, monsterOptions, 0);
-			if (action == 0) {
-				boolean summon = CheckZoneToSummon.checkZoneToSummon(card);
-				if (summon == true) {
-					handSlot.setIcon(null);
-					handSlot.setVisible(false);
-					return true;
-				}
+			int action = JOptionPane.showOptionDialog(null, null, "Select your action",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, monsterOptions, 0);
 
-			} else if (action == 1) {
+			if (normalSummoned == false) {
+				if (action == 0) {
+					boolean summon = CheckZoneToSummon.checkZoneToSummon(card);
+					if (summon == true) {
+						handSlot.setIcon(null);
+						handSlot.setVisible(false);
+						PlayCard.normalSummoned = true;
+						return true;
+					}
+				} else if (action == 1) {
 				boolean set = CheckZoneToSetMonster.checkZoneToSetMonster(card);
 				if (set == true) {
 					handSlot.setIcon(null);
 					handSlot.setVisible(false);
+					PlayCard.normalSummoned = true;
 					return true;
 				}
+			} else if (action == 2) {
+				return true;
 			}
+		} else if (action != 2) {
+			JOptionPane.showMessageDialog(null, "You can only normal summon once per turn!");
+		}
 
 		} else if (cardType == 1) {
 			int action = JOptionPane.showOptionDialog(null, null, "Select your action",
