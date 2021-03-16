@@ -182,8 +182,7 @@ public class Main {
 		HandControl.opponentHand4Occupied = true;
 		DuelFrame.opponentHand4.setVisible(true);
 		DuelFrame.cardInfo.setIcon(BigCards.d);
-		JOptionPane.showOptionDialog(null, "Your opponent assembled all 5 pieces of Destiny Board!", "YOU LOST!",
-				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, Options, 0);
+		JOptionPane.showMessageDialog(null, "Your opponent assembled all 5 pieces of Destiny Board", "YOU LOSE!", 0);
 	}
 
 	public static void main(String[] args) {
