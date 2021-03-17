@@ -36,8 +36,8 @@ public class Main {
 				BoardControl.opponentMonster3Occupied = true;
 				DamageControl.currentOpponentMonster3Attack = 1800;
 				DamageControl.currentOpponentMonster3Defense = 800;
-				DuelFrame.opponentSpellZone1.setIcon(SmallCards.minicover);
-				BoardControl.opponentSpell1Occupied = true;
+				DuelFrame.opponentSpellZone5.setIcon(SmallCards.minicover);
+				BoardControl.opponentSpell5Occupied = true;
 			}
 		};
 		timer.schedule(task1, 1500);
@@ -58,11 +58,13 @@ public class Main {
 		RoundControl.passRound();
 		DuelFrame.nextPhaseButton.setEnabled(false);
 		CpuTurns.disablePlayer();
-		DuelFrame.opponentSpellZone1.setIcon(SmallCards.minid);
-		DuelFrame.opponentSpellZone2.setIcon(SmallCards.minie);
-		BoardControl.opponentSpell2Occupied = true;
+		DuelFrame.opponentSpellZone5.setIcon(SmallCards.minid);
+		DuelFrame.opponentSpellZone4.setIcon(SmallCards.minie);
+		BoardControl.opponentSpell4Occupied = true;
 		HandControl.opponentHand4Occupied = true;
 		DuelFrame.opponentHand4.setVisible(true);
+		DuelFrame.cardsRemainingOpponent--;
+		DuelFrame.opponentCardsRemaining.setText(String.valueOf(DuelFrame.cardsRemainingOpponent));
 		Timer timer = new Timer();
 		TimerTask task1 = new TimerTask() {
 			public void run() {
@@ -100,9 +102,13 @@ public class Main {
 		if (HandControl.opponentHand4Occupied == true) {
 			HandControl.opponentHand5Occupied = true;
 			DuelFrame.opponentHand5.setVisible(true);
+			DuelFrame.cardsRemainingOpponent--;
+			DuelFrame.opponentCardsRemaining.setText(String.valueOf(DuelFrame.cardsRemainingOpponent));
 		} else {
 			HandControl.opponentHand4Occupied = true;
 			DuelFrame.opponentHand4.setVisible(true);
+			DuelFrame.cardsRemainingOpponent--;
+			DuelFrame.opponentCardsRemaining.setText(String.valueOf(DuelFrame.cardsRemainingOpponent));
 		}
 
 		Timer timer = new Timer();
@@ -135,17 +141,23 @@ public class Main {
 		DuelFrame.nextPhaseButton.setEnabled(false);
 		RoundControl.passRound();
 		CpuTurns.disablePlayer();
-		BoardControl.opponentSpell4Occupied = true;
-		DuelFrame.opponentSpellZone4.setIcon(SmallCards.minit);
+		BoardControl.opponentSpell2Occupied = true;
+		DuelFrame.opponentSpellZone2.setIcon(SmallCards.minit);
 		if (HandControl.opponentHand5Occupied) {
 			HandControl.opponentHand6Occupied = true;
 			DuelFrame.opponentHand6.setVisible(true);
+			DuelFrame.cardsRemainingOpponent--;
+			DuelFrame.opponentCardsRemaining.setText(String.valueOf(DuelFrame.cardsRemainingOpponent));
 		} else if (HandControl.opponentHand4Occupied) {
 			HandControl.opponentHand5Occupied = true;
 			DuelFrame.opponentHand5.setVisible(true);
+			DuelFrame.cardsRemainingOpponent--;
+			DuelFrame.opponentCardsRemaining.setText(String.valueOf(DuelFrame.cardsRemainingOpponent));
 		} else {
 			HandControl.opponentHand4Occupied = true;
 			DuelFrame.opponentHand4.setVisible(true);
+			DuelFrame.cardsRemainingOpponent--;
+			DuelFrame.opponentCardsRemaining.setText(String.valueOf(DuelFrame.cardsRemainingOpponent));
 		}
 
 		Timer timer = new Timer();
@@ -177,8 +189,8 @@ public class Main {
 	public static void cpuTurn5() {
 		DuelFrame.nextPhaseButton.setEnabled(false);
 		CpuTurns.disablePlayer();
-		BoardControl.opponentSpell5Occupied = true;
-		DuelFrame.opponentSpellZone5.setIcon(SmallCards.minih);
+		BoardControl.opponentSpell1Occupied = true;
+		DuelFrame.opponentSpellZone1.setIcon(SmallCards.minih);
 		HandControl.opponentHand4Occupied = true;
 		DuelFrame.opponentHand4.setVisible(true);
 		DuelFrame.cardInfo.setIcon(BigCards.d);
