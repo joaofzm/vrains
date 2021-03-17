@@ -10,7 +10,7 @@ public class DarkHole {
 	public static boolean darkHole() {
 
 		if (BoardControl.opponentMonster3Occupied == true) {
-			DuelFrame.opponentGraveyard.setIcon(SmallCards.minidarkelf);
+			DuelFrame.opponentGraveyard.setIcon(SmallCards.miniberfomet);
 		}
 
 		DuelFrame.playerMonsterZone1.setIcon(null);
