@@ -25,4 +25,9 @@ public class BigCards {
 	public static ImageIcon t = new ImageIcon("t.jpg");
 	public static ImageIcon h = new ImageIcon("h.jpg");
 
+	public static ImageIcon berfomet = new ImageIcon("berfomet.jpg");
+	public static ImageIcon lamia = new ImageIcon("lamia.jpg");
+	public static ImageIcon swirlslime = new ImageIcon("swirlslime.jpg");
+	public static ImageIcon necroslime = new ImageIcon("necroslime.jpg");
+
 }
