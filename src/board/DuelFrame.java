@@ -27,6 +27,8 @@ public class DuelFrame extends JFrame implements ActionListener {
 	
 	static int cpuRound = 1;
 
+	static int monstersKilled = 0;
+
 	static String[] flipOptions = { "Flip", "Cancel" };
 	static String[] monsterOptions = { "Attack", "Cancel" };
 	static String[] spellOptions = { "Attack", "Cancel" };
@@ -136,9 +138,13 @@ public class DuelFrame extends JFrame implements ActionListener {
 	public static JButton playerSpellZone4 = new JButton();
 	public static JButton playerSpellZone5 = new JButton();
 	public static JButton playerDeck = new JButton();
+	public static JButton playerCardsRemaining = new JButton();
+	public static JButton playerCardsRemaining2 = new JButton();
 	public static JButton playerField = new JButton();
 	public static JButton playerGraveyard = new JButton();
 	public static JButton playerExtraDeck = new JButton();
+
+	public static int cardsRemainingPlayer = 40;
 
 	public static JButton opponentMonsterZone1 = new JButton();
 	public static JButton opponentMonsterZone2 = new JButton();
@@ -151,11 +157,15 @@ public class DuelFrame extends JFrame implements ActionListener {
 	public static JButton opponentSpellZone4 = new JButton();
 	public static JButton opponentSpellZone5 = new JButton();
 	public static JButton opponentDeck = new JButton();
+	public static JButton opponentCardsRemaining = new JButton();
+	public static JButton opponentCardsRemaining2 = new JButton();
 	public static JButton opponentField = new JButton();
 	public static JButton opponentGraveyard = new JButton();
 	public static JButton opponentExtraDeck = new JButton();
 	public static JButton linkZone1 = new JButton();
 	public static JButton linkZone2 = new JButton();
+
+	public static int cardsRemainingOpponent = 35;
 
 	public DuelFrame() {
 
@@ -849,8 +859,25 @@ public class DuelFrame extends JFrame implements ActionListener {
 		playerField.addActionListener(this);
 		this.add(playerField);
 
+		playerCardsRemaining2.setBounds(1408, 657, 110, 155);
+		playerCardsRemaining2.setBackground(new Color(1, 1, 1, 0));
+		playerCardsRemaining2.setEnabled(false);
+		this.add(playerCardsRemaining2);
+
+		playerCardsRemaining.setBounds(1439, 710, 50, 50);
+		playerCardsRemaining.setFont(new Font("Impact", Font.PLAIN, 40));
+		playerCardsRemaining.setBackground(Color.black);
+		playerCardsRemaining.setEnabled(true);
+		playerCardsRemaining.setText(String.valueOf(cardsRemainingPlayer));
+		playerCardsRemaining.setForeground(Color.white);
+		playerCardsRemaining.setBorder(BorderFactory.createLineBorder(new Color(1, 1, 1, 0)));
+		playerCardsRemaining.addActionListener(this);
+		this.add(playerCardsRemaining);
+
 		playerDeck.setBounds(1408, 657, 110, 155);
 		playerDeck.setIcon(SmallCards.minicover);
+		playerDeck.setRolloverEnabled(false);
+		playerDeck.setFont(new Font("Impact", Font.PLAIN, 30));
 		playerDeck.setBorder(BorderFactory.createLineBorder(Color.orange));
 		playerDeck.addActionListener(this);
 		this.add(playerDeck);
@@ -933,6 +960,21 @@ public class DuelFrame extends JFrame implements ActionListener {
 		opponentField.setBorder(BorderFactory.createLineBorder(Color.green));
 		opponentField.addActionListener(this);
 		this.add(opponentField);
+
+		opponentCardsRemaining2.setBounds(538, 55, 110, 155);
+		opponentCardsRemaining2.setBackground(new Color(1, 1, 1, 0));
+		opponentCardsRemaining2.setEnabled(false);
+		this.add(opponentCardsRemaining2);
+
+		opponentCardsRemaining.setBounds(568, 105, 50, 50);
+		opponentCardsRemaining.setFont(new Font("Impact", Font.PLAIN, 40));
+		opponentCardsRemaining.setBackground(Color.black);
+		opponentCardsRemaining.setEnabled(true);
+		opponentCardsRemaining.setText(String.valueOf(cardsRemainingOpponent));
+		opponentCardsRemaining.setForeground(Color.white);
+		opponentCardsRemaining.setBorder(BorderFactory.createLineBorder(new Color(1, 1, 1, 0)));
+		opponentCardsRemaining.addActionListener(this);
+		this.add(opponentCardsRemaining);
 
 		opponentDeck.setBounds(538, 55, 110, 155);
 		opponentDeck.setIcon(SmallCards.minicover);
@@ -1150,7 +1192,16 @@ public class DuelFrame extends JFrame implements ActionListener {
 					if (action == 0 && DamageControl.playerMonster1Attacked == false) {
 						if (BoardControl.opponentMonster3Occupied == true) {
 							opponentMonsterZone3.setIcon(null);
-							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							if (monstersKilled == 0 || monstersKilled == 3) {
+								opponentGraveyard.setIcon(SmallCards.miniswirlslime);
+								monstersKilled++;
+							} else if (monstersKilled == 1) {
+								opponentGraveyard.setIcon(SmallCards.mininecroslime);
+								monstersKilled++;
+							} else if (monstersKilled == 2) {
+								opponentGraveyard.setIcon(SmallCards.minilamia);
+								monstersKilled++;
+							}
 							BoardControl.opponentMonster3Occupied = false;
 							DamageControl.playerMonster1Attacked = true;
 						} else {
@@ -1190,7 +1241,16 @@ public class DuelFrame extends JFrame implements ActionListener {
 					if (action == 0 && DamageControl.playerMonster2Attacked == false) {
 						if (BoardControl.opponentMonster3Occupied == true) {
 							opponentMonsterZone3.setIcon(null);
-							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							if (monstersKilled == 0 || monstersKilled == 3) {
+								opponentGraveyard.setIcon(SmallCards.miniswirlslime);
+								monstersKilled++;
+							} else if (monstersKilled == 1) {
+								opponentGraveyard.setIcon(SmallCards.mininecroslime);
+								monstersKilled++;
+							} else if (monstersKilled == 2) {
+								opponentGraveyard.setIcon(SmallCards.minilamia);
+								monstersKilled++;
+							}
 							BoardControl.opponentMonster3Occupied = false;
 							DamageControl.playerMonster2Attacked = true;
 						} else {
@@ -1231,7 +1291,16 @@ public class DuelFrame extends JFrame implements ActionListener {
 					if (action == 0 && DamageControl.playerMonster3Attacked == false) {
 						if (BoardControl.opponentMonster3Occupied == true) {
 							opponentMonsterZone3.setIcon(null);
-							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							if (monstersKilled == 0 || monstersKilled == 3) {
+								opponentGraveyard.setIcon(SmallCards.miniswirlslime);
+								monstersKilled++;
+							} else if (monstersKilled == 1) {
+								opponentGraveyard.setIcon(SmallCards.mininecroslime);
+								monstersKilled++;
+							} else if (monstersKilled == 2) {
+								opponentGraveyard.setIcon(SmallCards.minilamia);
+								monstersKilled++;
+							}
 							BoardControl.opponentMonster3Occupied = false;
 							DamageControl.playerMonster3Attacked = true;
 						} else {
@@ -1272,7 +1341,16 @@ public class DuelFrame extends JFrame implements ActionListener {
 					if (action == 0 && DamageControl.playerMonster4Attacked == false) {
 						if (BoardControl.opponentMonster3Occupied == true) {
 							opponentMonsterZone3.setIcon(null);
-							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							if (monstersKilled == 0 || monstersKilled == 3) {
+								opponentGraveyard.setIcon(SmallCards.miniswirlslime);
+								monstersKilled++;
+							} else if (monstersKilled == 1) {
+								opponentGraveyard.setIcon(SmallCards.mininecroslime);
+								monstersKilled++;
+							} else if (monstersKilled == 2) {
+								opponentGraveyard.setIcon(SmallCards.minilamia);
+								monstersKilled++;
+							}
 							BoardControl.opponentMonster3Occupied = false;
 							DamageControl.playerMonster4Attacked = true;
 						} else {
@@ -1313,7 +1391,16 @@ public class DuelFrame extends JFrame implements ActionListener {
 					if (action == 0 && DamageControl.playerMonster5Attacked == false) {
 						if (BoardControl.opponentMonster3Occupied == true) {
 							opponentMonsterZone3.setIcon(null);
-							opponentGraveyard.setIcon(SmallCards.minisevencoloredfish);
+							if (monstersKilled == 0 || monstersKilled == 3) {
+								opponentGraveyard.setIcon(SmallCards.miniswirlslime);
+								monstersKilled++;
+							} else if (monstersKilled == 1) {
+								opponentGraveyard.setIcon(SmallCards.mininecroslime);
+								monstersKilled++;
+							} else if (monstersKilled == 2) {
+								opponentGraveyard.setIcon(SmallCards.minilamia);
+								monstersKilled++;
+							}
 							BoardControl.opponentMonster3Occupied = false;
 							DamageControl.playerMonster5Attacked = true;
 						} else {
@@ -1395,20 +1482,20 @@ public class DuelFrame extends JFrame implements ActionListener {
 
 			if (e.getSource() == playerSpellZone3) {
 				if (DuelFrame.playerSpellZone3.getIcon() != null) {
-					CheckCardInHandForBigCardInfo.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone3);
-					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone3);
+					CheckCardInHandForBigCardInfo
+							.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone3);
+					boolean played = PlaySetCard.playSetCard(CheckZoneToSetSpell.currentSettedSpellZone3);
 					if (played == true) {
 						playerSpellZone3.setIcon(null);
 						BoardControl.playerSpell3Occupied = false;
-					}
+			}
 				}
 			}
-
 			if (e.getSource() == playerSpellZone1) {
 				if (DuelFrame.playerSpellZone1.getIcon() != null) {
 					CheckCardInHandForBigCardInfo
 							.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone1);
-					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone1);
+					boolean played = PlaySetCard.playSetCard(CheckZoneToSetSpell.currentSettedSpellZone1);
 					if (played == true) {
 						playerSpellZone1.setIcon(null);
 						BoardControl.playerSpell1Occupied = false;
@@ -1420,11 +1507,11 @@ public class DuelFrame extends JFrame implements ActionListener {
 				if (DuelFrame.playerSpellZone2.getIcon() != null) {
 					CheckCardInHandForBigCardInfo
 							.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone2);
-					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone2);
+					boolean played = PlaySetCard.playSetCard(CheckZoneToSetSpell.currentSettedSpellZone2);
 					if (played == true) {
 						playerSpellZone2.setIcon(null);
 						BoardControl.playerSpell2Occupied = false;
-					}
+			}
 				}
 			}
 
@@ -1432,11 +1519,11 @@ public class DuelFrame extends JFrame implements ActionListener {
 				if (DuelFrame.playerSpellZone4.getIcon() != null) {
 					CheckCardInHandForBigCardInfo
 							.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone4);
-					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone4);
+					boolean played = PlaySetCard.playSetCard(CheckZoneToSetSpell.currentSettedSpellZone4);
 					if (played == true) {
 						playerSpellZone4.setIcon(null);
 						BoardControl.playerSpell4Occupied = false;
-					}
+			}
 				}
 			}
 
@@ -1444,11 +1531,11 @@ public class DuelFrame extends JFrame implements ActionListener {
 				if (DuelFrame.playerSpellZone5.getIcon() != null) {
 					CheckCardInHandForBigCardInfo
 							.checkCardInHandForBigCardInfo(CheckZoneToSetSpell.currentSettedSpellZone5);
-					boolean played = PlayCard.playCard(CheckZoneToSetSpell.currentSettedSpellZone5);
+					boolean played = PlaySetCard.playSetCard(CheckZoneToSetSpell.currentSettedSpellZone5);
 					if (played == true) {
 						playerSpellZone5.setIcon(null);
 						BoardControl.playerSpell5Occupied = false;
-					}
+			}
 				}
 			}
 
