@@ -26,4 +26,11 @@ public class SmallCards {
 	public static ImageIcon minit = new ImageIcon("minit.jpg");
 	public static ImageIcon minih = new ImageIcon("minih.jpg");
 
+	public static ImageIcon miniberfomet = new ImageIcon("miniberfomet.jpg");
+	public static ImageIcon minilamia = new ImageIcon("minilamia.jpg");
+	public static ImageIcon miniswirlslime = new ImageIcon("miniswirlslime.jpg");
+	public static ImageIcon mininecroslime = new ImageIcon("mininecroslime.jpg");
+
+	public static ImageIcon translucid = new ImageIcon("translucid.png");
+
 }
