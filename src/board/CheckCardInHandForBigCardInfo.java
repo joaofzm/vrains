@@ -48,6 +48,14 @@ public class CheckCardInHandForBigCardInfo {
 			card = BigCards.h;
 		} else if (card == SmallCards.minicover) {
 			card = BigCards.cover;
+		} else if (card == SmallCards.minilamia) {
+			card = BigCards.lamia;
+		} else if (card == SmallCards.mininecroslime) {
+			card = BigCards.necroslime;
+		} else if (card == SmallCards.miniswirlslime) {
+			card = BigCards.swirlslime;
+		} else if (card == SmallCards.miniberfomet) {
+			card = BigCards.berfomet;
 		}
 
 		DuelFrame.cardInfo.setIcon(card);
