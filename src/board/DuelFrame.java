@@ -173,6 +173,7 @@ public class DuelFrame extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setSize(1536, 864);
+		this.setMinimumSize(new Dimension(1536, 864));
 		this.setVisible(true);
 		this.setResizable(false);
 		this.setBackground(Color.black);
