@@ -10,7 +10,7 @@ public class MonsterReborn {
 
 		if (BoardControl.opponentMonster3Occupied == true) {
 			DuelFrame.opponentMonsterZone3.setIcon(null);
-			DuelFrame.opponentGraveyard.setIcon(SmallCards.minigeminielf);
+			DuelFrame.opponentGraveyard.setIcon(SmallCards.miniberfomet);
 			BoardControl.opponentMonster3Occupied = false;
 		}
 		return true;
