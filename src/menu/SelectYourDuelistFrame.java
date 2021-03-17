@@ -1,6 +1,7 @@
 package menu;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -85,6 +86,7 @@ public class SelectYourDuelistFrame extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setSize(1536,864);
+		this.setMinimumSize(new Dimension(1536, 864));
 		this.setVisible(true);
 		this.pack();
 
