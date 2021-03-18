@@ -25,17 +25,17 @@ public class RockPaperScissorsFrame extends JFrame implements ActionListener {
 	JButton scissors;
 
 	JButton opponent;
+	
+	public ImageIcon rotatedRockImage = new ImageIcon(getClass().getClassLoader().getResource("rotatedrock.jpg"));
+	public ImageIcon rotatedPaperImage = new ImageIcon(getClass().getClassLoader().getResource("rotatedpaper.jpg"));
+	public ImageIcon rotatedScissorsImage = new ImageIcon(getClass().getClassLoader().getResource("rotatedscissors.jpg"));
+	
+	public ImageIcon rockImage = new ImageIcon(getClass().getClassLoader().getResource("rock.jpg"));
+	public ImageIcon paperImage = new ImageIcon(getClass().getClassLoader().getResource("paper.jpg"));
+	public ImageIcon scissorsImage = new ImageIcon(getClass().getClassLoader().getResource("scissors.jpg"));
 
-	public static ImageIcon rotatedRockImage = new ImageIcon("rotatedrock.jpg");
-	public static ImageIcon rotatedPaperImage = new ImageIcon("rotatedpaper.jpg");
-	public static ImageIcon rotatedScissorsImage = new ImageIcon("rotatedscissors.jpg");
-
-	public static ImageIcon rockImage = new ImageIcon("rock.jpg");
-	public static ImageIcon paperImage = new ImageIcon("paper.jpg");
-	public static ImageIcon scissorsImage = new ImageIcon("scissors.jpg");
-
-	public static ImageIcon firstImage = new ImageIcon("first.jpg");
-	public static ImageIcon secondImage = new ImageIcon("second.jpg");
+	// public static ImageIcon firstImage = new ImageIcon("first.jpg");
+	// public static ImageIcon secondImage = new ImageIcon("second.jpg");
 
 	static String[] Options = { "CONFIRM" };
 
@@ -87,7 +87,7 @@ public class RockPaperScissorsFrame extends JFrame implements ActionListener {
 		opponent.setVisible(false);
 		opponent.setBorder(new LineBorder(Color.WHITE, 3));
 
-		this.setContentPane(new JLabel(new ImageIcon("rockpaperscissors.jpg")));
+		this.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("rockpaperscissors.jpg"))));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setSize(1536, 864);
