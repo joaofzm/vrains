@@ -22,6 +22,7 @@ import cards.SmallCards;
 import menu.Main;
 import menu.SelectYourDuelistFrame;
 import menu.SelectYourOpponentFrame;
+import menu.StartFrame;
 
 public class DuelFrame extends JFrame implements ActionListener {
 	
@@ -175,6 +176,9 @@ public class DuelFrame extends JFrame implements ActionListener {
 		this.setSize(1536, 864);
 		this.setMinimumSize(new Dimension(1536, 864));
 		this.setVisible(true);
+		ImageIcon yusaku = new ImageIcon(StartFrame.class.getResource("YusakuFujiki.png"));
+		this.setIconImage(yusaku.getImage());
+		this.setTitle("V.R.A.I.N.S.");
 		this.setResizable(false);
 		this.setBackground(Color.black);
 		this.getRootPane().setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.black));
