@@ -92,6 +92,10 @@ public class SelectYourDuelistFrame extends JFrame implements ActionListener {
 		this.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("pickyourduelist.jpg"))));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
+		ImageIcon yusaku = new ImageIcon(StartFrame.class.getResource("YusakuFujiki.png"));
+		this.setIconImage(yusaku.getImage());
+		this.setTitle("V.R.A.I.N.S.");
+		this.setResizable(false);
 		this.setSize(1536,864);
 		this.setMinimumSize(new Dimension(1536, 864));
 		this.setVisible(true);
