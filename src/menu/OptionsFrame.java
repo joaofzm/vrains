@@ -31,6 +31,10 @@ public class OptionsFrame extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setSize(1536,864);
+		ImageIcon yusaku = new ImageIcon(StartFrame.class.getResource("YusakuFujiki.png"));
+		this.setIconImage(yusaku.getImage());
+		this.setTitle("V.R.A.I.N.S.");
+		this.setResizable(false);
 		this.setMinimumSize(new Dimension(1536, 864));
 		this.setVisible(true);
 		this.pack();
