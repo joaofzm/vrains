@@ -23,6 +23,11 @@ public class SelectYourOpponentFrame extends JFrame implements ActionListener {
 	JButton reiji;
 	JButton playMaker;
 	
+	public ImageIcon soulBurnerImage = new ImageIcon(SelectYourDuelistFrame.class.getResource("soulburner.jpg"));
+	public ImageIcon revolverImage = new ImageIcon(SelectYourDuelistFrame.class.getResource("revolver.jpg"));
+	public ImageIcon reijiImage = new ImageIcon(SelectYourDuelistFrame.class.getResource("reiji.jpg"));
+	public ImageIcon playMakerImage = new ImageIcon(SelectYourDuelistFrame.class.getResource("playmaker.jpg"));
+
 	public static int chosenOpponent = 0;
 
 	public SelectYourOpponentFrame() {	
@@ -31,7 +36,7 @@ public class SelectYourOpponentFrame extends JFrame implements ActionListener {
 		revolver.setBounds(380,310,170,170);
 		revolver.addActionListener(this);
 		revolver.setFocusable(false);
-		revolver.setIcon(SelectYourDuelistFrame.revolverImage);
+		revolver.setIcon(revolverImage);
 		revolver.addActionListener(this);
 		revolver.setBorder(new LineBorder(Color.WHITE,3));
 		
@@ -39,7 +44,7 @@ public class SelectYourOpponentFrame extends JFrame implements ActionListener {
 		soulBurner.setBounds(585,310,170,170);
 		soulBurner.addActionListener(this);
 		soulBurner.setFocusable(false);
-		soulBurner.setIcon(SelectYourDuelistFrame.soulBurnerImage);
+		soulBurner.setIcon(soulBurnerImage);
 		soulBurner.addActionListener(this);
 		soulBurner.setBorder(new LineBorder(Color.WHITE,3));
 	
@@ -47,7 +52,7 @@ public class SelectYourOpponentFrame extends JFrame implements ActionListener {
 		reiji.setBounds(790,310,170,170);
 		reiji.addActionListener(this);
 		reiji.setFocusable(false);
-		reiji.setIcon(SelectYourDuelistFrame.reijiImage);
+		reiji.setIcon(reijiImage);
 		reiji.addActionListener(this);
 		reiji.setBorder(new LineBorder(Color.WHITE,3));
 		
@@ -55,7 +60,7 @@ public class SelectYourOpponentFrame extends JFrame implements ActionListener {
 		playMaker.setBounds(995,310,170,170);
 		playMaker.addActionListener(this);
 		playMaker.setFocusable(false);
-		playMaker.setIcon(SelectYourDuelistFrame.playMakerImage);
+		playMaker.setIcon(playMakerImage);
 		playMaker.addActionListener(this);
 		playMaker.setBorder(new LineBorder(Color.WHITE,3));
 
@@ -78,7 +83,7 @@ public class SelectYourOpponentFrame extends JFrame implements ActionListener {
 		returnButton.setBackground(new Color(0x982f30));
 		returnButton.setFocusable(false);
 		
-		this.setContentPane(new JLabel(new ImageIcon("pickyouropponent.jpg")));
+		this.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("pickyouropponent.jpg"))));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setSize(1536,864);
