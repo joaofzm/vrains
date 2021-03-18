@@ -169,7 +169,7 @@ public class DuelFrame extends JFrame implements ActionListener {
 
 	public DuelFrame() {
 
-		this.setContentPane(new JLabel(new ImageIcon("board.jpg")));
+		this.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("board.jpg"))));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setSize(1536, 864);
