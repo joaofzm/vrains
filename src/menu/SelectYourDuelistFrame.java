@@ -23,10 +23,17 @@ public class SelectYourDuelistFrame extends JFrame implements ActionListener {
 	JButton reiji;
 	JButton playMaker;
 
-	public static ImageIcon soulBurnerImage = new ImageIcon("soulburner.jpg");
-	public static ImageIcon revolverImage = new ImageIcon("revolver.jpg");
-	public static ImageIcon reijiImage = new ImageIcon("reiji.jpg");
-	public static ImageIcon playMakerImage = new ImageIcon("playmaker.jpg");
+	/*
+	public ImageIcon soulBurnerImage = new ImageIcon(getClass().getClassLoader().getResource("soulburner.jpg"));
+	public ImageIcon revolverImage = new ImageIcon(getClass().getClassLoader().getResource("revolver.jpg"));
+	public ImageIcon reijiImage = new ImageIcon(getClass().getClassLoader().getResource("reiji.jpg"));
+	public ImageIcon playMakerImage = new ImageIcon(getClass().getClassLoader().getResource("playmaker.jpg"));
+	*/
+
+	public static ImageIcon soulBurnerImage = new ImageIcon(SelectYourDuelistFrame.class.getResource("soulburner.jpg"));
+	public static ImageIcon revolverImage = new ImageIcon(SelectYourDuelistFrame.class.getResource("revolver.jpg"));
+	public static ImageIcon reijiImage = new ImageIcon(SelectYourDuelistFrame.class.getResource("reiji.jpg"));
+	public static ImageIcon playMakerImage = new ImageIcon(SelectYourDuelistFrame.class.getResource("playmaker.jpg"));
 	
 	public static int chosenDuelist = 0;
 	
@@ -82,7 +89,7 @@ public class SelectYourDuelistFrame extends JFrame implements ActionListener {
 		returnButton.setBackground(new Color(0x982f30));
 		returnButton.setFocusable(false);
 		
-		this.setContentPane(new JLabel(new ImageIcon("pickyourduelist.jpg")));
+		this.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("pickyourduelist.jpg"))));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setSize(1536,864);
