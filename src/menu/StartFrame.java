@@ -46,7 +46,7 @@ public class StartFrame extends JFrame implements ActionListener {
 		exitButton.setBackground(new Color(0x982f30));
 		exitButton.setFocusable(false);
 		
-		this.setContentPane(new JLabel(new ImageIcon("start.jpg")));
+		this.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("start.jpg"))));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setSize(1536,864);
