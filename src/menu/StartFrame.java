@@ -46,9 +46,15 @@ public class StartFrame extends JFrame implements ActionListener {
 		exitButton.setBackground(new Color(0x982f30));
 		exitButton.setFocusable(false);
 		
+
+
 		this.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("start.jpg"))));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
+		ImageIcon yusaku = new ImageIcon(StartFrame.class.getResource("YusakuFujiki.png"));
+		this.setIconImage(yusaku.getImage());
+		this.setTitle("V.R.A.I.N.S.");
+		this.setResizable(false);
 		this.setSize(1536,864);
 		this.setMinimumSize(new Dimension(1536, 864));
 		this.setVisible(true);
