@@ -27,7 +27,7 @@ public class OptionsFrame extends JFrame implements ActionListener {
 		returnButton.setBackground(new Color(0x982f30));
 		returnButton.setFocusable(false);
 		
-		this.setContentPane(new JLabel(new ImageIcon("options.jpg")));
+		this.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("options.jpg"))));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setSize(1536,864);
